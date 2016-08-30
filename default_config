@@ -1,0 +1,13 @@
+Passos para a configuração do code style padrão que iremos usar.
+
+1 - Iremos usar o code style padrão do próprio eclipse
+2 - Vamos configurar o save actions para automaticamente organizar o nosso código no momento do save.
+
+Passos:
+1 - Ctrl + 3
+2 - digitar "saje"
+3 - Colocar um check nas opções:
+	3.1 - Perform the selected actions on save
+	3.2 - Format source code
+	3.3 - Format all lines
+	3.4 - Organize imports
