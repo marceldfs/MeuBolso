@@ -39,11 +39,6 @@
 		<mkdir dir="${build.dir}" />
 		<delete dir="${build.dir}" includes="**/*.*" />
 		<javac srcdir="${src.dir}" destdir="${build.dir}" classpathref="lib.path.id" debug="on" />
-		<copy todir="${build.dir}">
-			<fileset dir="${resources.dir}">
-				<include name="**/*.*" />
-			</fileset>
-		</copy>
 	</target>
 
 	<!-- ================================= 
@@ -53,11 +48,6 @@
 		<mkdir dir="${test.build.dir}" />
 		<delete dir="${test.build.dir}" includes="**/*.*" />
 		<javac srcdir="${test.src.dir}" destdir="${test.build.dir}" classpathref="test.path.id" debug="on" />
-		<copy todir="${test.build.dir}">
-			<fileset dir="${test.resources.dir}">
-				<include name="**/*.*" />
-			</fileset>
-		</copy>
 	</target>
 
 	<!-- ================================= 
