@@ -8,4 +8,5 @@ Dipesh Rogunata
 Gracio Mambo
 Marcel Saraiva
 Nixon Mambuque
+Ted Fernandes
 Yuri Wingester
