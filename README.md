@@ -1,7 +1,7 @@
 Meu bolso
 =============
 
-Este projecto foi desenvolvido no ambito da formacao da Caelum solicitada pelo Cedsif
+Este projecto foi desenvolvido no ambito da formacao da Caelum solicitada pelo Cedsif pela equipa Galacticos
 
 Membros:
 Dipesh Rogunata
