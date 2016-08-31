@@ -2,6 +2,7 @@ package mz.co.cedsif.meubolso.acceptance;
 
 import static org.junit.Assert.assertEquals;
 
+import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -15,42 +16,32 @@ import mz.co.cedsif.meu.bolso.acceptance.pageobject.Propriedades;
 
 public class TesteTelaInicial {
 
-	public static String BASE_URL = "http://localhost:8080";
-	private static WebDriver browser;
 	private static InicialPage navegador;
-
-	@BeforeClass
-	public static void abreBrowser() {
-		browser = new FirefoxDriver();
-	}
 
 	@Before
 	public void setUp() throws Exception {
-		Page navegador = new Page(browser);
+		navegador = new InicialPage();
 	}
 
 	@Test
 	public void TestarNrButtoes() throws Exception {
-		System.out.println("1");
 		navegador.abrePaginaInicial();
-		System.out.println("3");
 		assertEquals(2, navegador.contaBotoes());
-
 	}
 
 	@Test
 	public void TestarNGastoExiste() throws Exception {
 		navegador.abrePaginaInicial();
-		assertEquals(true, navegador.existeBotão(Propriedades.btGasto));
+		assertEquals(true, navegador.existeBotão(Propriedades.linkNovoGasto));
 	}
 
 	@Test
 	public void TestarNGanhoExiste() throws Exception {
 		navegador.abrePaginaInicial();
-		assertEquals(true, navegador.existeBotão(Propriedades.btGanho));
+		assertEquals(true, navegador.existeBotão(Propriedades.linkNovoGanho));
 	}
 
-	@AfterClass
+	@After
 	public static void teardown() {
 		navegador.fecharPagina();
 	}
