@@ -6,7 +6,6 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import mz.co.cedsif.meu.bolso.acceptance.pageobject.GastoPage;
-import mz.co.cedsif.meubolso.model.Ganho;
 import mz.co.cedsif.meubolso.model.Gasto;
 
 public class TesteTelaGasto {
