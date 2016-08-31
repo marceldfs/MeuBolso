@@ -3,10 +3,19 @@ package mz.co.cedsif.meubolso.model;
 import java.util.Date;
 
 public class Ganho {
-	private Date data;
+	
+	@Id
+	@GeneratedValue
+	private Long id;
+
+	@Temporal(TemporalType.DATE)
+	private LocalDate data;
+
 	private String descricao;
+	private double valor;
+	
 	private String tipo;
-	private Double valor;
+	
 
 	public Date getData() {
 		return data;
