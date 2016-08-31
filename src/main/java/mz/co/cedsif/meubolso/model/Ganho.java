@@ -3,33 +3,33 @@ package mz.co.cedsif.meubolso.model;
 import java.util.Date;
 
 public class Ganho {
-	private Date Data;
-	private String Descrição;
-	private String Tipo;
+	private Date data;
+	private String descricao;
+	private String tipo;
 	private Double valor;
 
 	public Date getData() {
-		return Data;
+		return data;
 	}
 
 	public void setData(Date data) {
-		Data = data;
+		this.data = data;
 	}
 
 	public String getDescrição() {
-		return Descrição;
+		return descricao;
 	}
 
-	public void setDescrição(String descrição) {
-		Descrição = descrição;
+	public void setDescrição(String descricao) {
+		this.descricao = descricao;
 	}
 
 	public String getTipo() {
-		return Tipo;
+		return tipo;
 	}
 
 	public void setTipo(String tipo) {
-		Tipo = tipo;
+		this.tipo = tipo;
 	}
 
 	public Double getValor() {
