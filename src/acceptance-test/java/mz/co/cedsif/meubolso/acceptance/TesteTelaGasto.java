@@ -7,6 +7,7 @@ import org.junit.Before;
 import org.junit.Test;
 import mz.co.cedsif.meu.bolso.acceptance.pageobject.GastoPage;
 import mz.co.cedsif.meubolso.model.Ganho;
+import mz.co.cedsif.meubolso.model.Gasto;
 
 public class TesteTelaGasto {
 
@@ -19,13 +20,12 @@ public class TesteTelaGasto {
 
 	@Test
 	public void TestarCriargasto() throws Exception {
-		Ganho ganho= new Ganho();
+		Gasto gasto = new Gasto();
 		navegador.abrePaginaGasto();
-		navegador.preencherGasto(ganho);
-		navegador.cadastrar();
-		
+		navegador.preencherGasto(gasto);
+		navegador.clicarCadastrar();
 
-		assertEquals(true, navegador.verificarGanho(ganho));
+		assertEquals(true, navegador.verificarGasto(gasto));
 	}
 
 	@After
