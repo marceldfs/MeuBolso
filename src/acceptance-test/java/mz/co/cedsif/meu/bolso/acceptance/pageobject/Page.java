@@ -1,7 +1,6 @@
 package mz.co.cedsif.meu.bolso.acceptance.pageobject;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class Page {
