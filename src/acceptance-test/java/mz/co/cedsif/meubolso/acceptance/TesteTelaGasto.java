@@ -8,6 +8,7 @@ import org.junit.Test;
 
 import mz.co.cedsif.meubolso.acceptance.pageobject.GastoPage;
 import mz.co.cedsif.meubolso.model.Gasto;
+import mz.co.cedsif.meubolso.test.builder.GastoBuilder;
 
 public class TesteTelaGasto {
 
@@ -20,11 +21,10 @@ public class TesteTelaGasto {
 
 	@Test
 	public void TestarCriargasto() throws Exception {
-		Gasto gasto = new Gasto();
+		Gasto gasto = new GastoBuilder().cria();
 		navegador.abrePaginaGasto();
 		navegador.preencherGasto(gasto);
 		navegador.clicarCadastrar();
-
 		assertEquals(true, navegador.verificarGasto(gasto));
 	}
 

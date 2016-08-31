@@ -3,15 +3,10 @@ package mz.co.cedsif.meubolso.acceptance;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.After;
-import org.junit.AfterClass;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 
 import mz.co.cedsif.meubolso.acceptance.pageobject.InicialPage;
-import mz.co.cedsif.meubolso.acceptance.pageobject.Page;
 import mz.co.cedsif.meubolso.acceptance.properties.Propriedades;
 
 public class TesteTelaInicial {

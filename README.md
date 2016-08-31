@@ -12,3 +12,4 @@ Ted Fernandes
 Yuri Wingester
 
 NOTA: Por favor veja o ficheiro "default_config" que contém os passos para a definição do code style que iremos usar.
+Alterem a localizacao do vosso chrome driver na classe Propriedades variavel chromeDriverLocation

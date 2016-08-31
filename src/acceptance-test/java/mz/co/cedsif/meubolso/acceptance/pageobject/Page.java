@@ -1,7 +1,7 @@
 package mz.co.cedsif.meubolso.acceptance.pageobject;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 import mz.co.cedsif.meubolso.acceptance.properties.Propriedades;
 
@@ -10,7 +10,8 @@ public class Page {
 	protected final WebDriver driver;
 
 	public Page() {
-		this.driver = new FirefoxDriver();
+		System.setProperty("webdriver.chrome.driver", Propriedades.chromeDriverLocation);
+		this.driver = new ChromeDriver();
 	}
 
 	public void abrePaginaInicial() {
