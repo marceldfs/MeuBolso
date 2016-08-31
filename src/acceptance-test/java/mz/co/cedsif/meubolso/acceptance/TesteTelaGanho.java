@@ -6,10 +6,9 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import mz.co.cedsif.meu.bolso.acceptance.pageobject.GanhoPage;
-import mz.co.cedsif.meu.bolso.acceptance.pageobject.GastoPage;
+import mz.co.cedsif.meubolso.acceptance.pageobject.GanhoPage;
 import mz.co.cedsif.meubolso.model.Ganho;
-
+import mz.co.cedsif.meubolso.test.builder.GanhoBuilder;
 
 public class TesteTelaGanho {
 
@@ -22,11 +21,10 @@ public class TesteTelaGanho {
 
 	@Test
 	public void TestarCriargasto() throws Exception {
-		Ganho ganho = new Ganho();
+		Ganho ganho = new GanhoBuilder().cria();
 		navegador.abrePaginaGanho();
 		navegador.preencherGanho(ganho);
 		navegador.clicarCadastrar();
-
 		assertEquals(true, navegador.verificarGanho(ganho));
 	}
 

@@ -10,9 +10,9 @@ import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-import mz.co.cedsif.meu.bolso.acceptance.pageobject.InicialPage;
-import mz.co.cedsif.meu.bolso.acceptance.pageobject.Page;
-import mz.co.cedsif.meu.bolso.acceptance.pageobject.Propriedades;
+import mz.co.cedsif.meubolso.acceptance.pageobject.InicialPage;
+import mz.co.cedsif.meubolso.acceptance.pageobject.Page;
+import mz.co.cedsif.meubolso.acceptance.properties.Propriedades;
 
 public class TesteTelaInicial {
 
