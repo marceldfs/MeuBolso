@@ -2,15 +2,16 @@ package mz.co.cedsif.meu.bolso.acceptance.pageobject;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class Page {
 
-	private static final String BASE_URL = "http://localhost:8080";
-	private final WebDriver driver;
+	protected static final String BASE_URL = "http://localhost:8080";
+	protected final WebDriver driver;
 	
 
-	public Page(WebDriver driver) {
-		this.driver = driver;
+	public Page() {
+		this.driver = new FirefoxDriver();
 	}
 
 	public void abrePaginaInicial() {
@@ -20,9 +21,6 @@ public class Page {
 	public void fecharPagina() {
 		driver.close();
 	}
-	public void contarButoes() {
 	
-
-	}
 	
 }
