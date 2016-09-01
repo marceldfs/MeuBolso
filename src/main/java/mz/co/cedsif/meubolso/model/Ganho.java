@@ -23,7 +23,7 @@ public class Ganho {
 	private String descricao;
 	@Min(1)
 	private double valor;
-
+	@NotNull
 	private TipoGanho tipo;
 
 	public Ganho() {
