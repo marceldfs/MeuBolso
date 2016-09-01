@@ -27,13 +27,13 @@ public class TesteTelaInicial {
 	@Test
 	public void TestarNGastoExiste() throws Exception {
 		navegador.abrePaginaInicial();
-		assertEquals(true, navegador.existeBotao(Propriedades.linkNovoGasto));
+		assertEquals(true, navegador.existeLink(Propriedades.linkNovoGasto));
 	}
 
 	@Test
 	public void TestarNGanhoExiste() throws Exception {
 		navegador.abrePaginaInicial();
-		assertEquals(true, navegador.existeBotao(Propriedades.linkNovoGanho));
+		assertEquals(true, navegador.existeLink(Propriedades.linkNovoGanho));
 	}
 
 	@After

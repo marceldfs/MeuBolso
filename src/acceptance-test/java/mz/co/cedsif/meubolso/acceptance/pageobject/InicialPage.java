@@ -12,7 +12,7 @@ public class InicialPage extends Page {
 		return this.driver.findElements(By.cssSelector("")).size();
 	}
 
-	public Boolean existeBotao(String btName) {
+	public Boolean existeLink(String btName) {
 		if (this.driver.findElements(By.linkText(btName)) != null)
 			return true;
 		return false;
