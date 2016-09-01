@@ -10,7 +10,6 @@ public class Propriedades {
 	public static String fieldDescricaoName = "descricao";
 	public static String fieldTipoName = "tipo";
 	public static String fieldValorName = "valor";
-
 	public static String chromeDriverLocation = "C:/Users/acer/Documents/CEDSIF/Formacao/Teste de Software/Arquivos/chromedriver_win32/chromedriver.exe";
 
 }

@@ -28,13 +28,17 @@ public class GanhoPage extends Page {
 
 	public boolean verificarGanho(Ganho ganho) {
 
-		if (!this.driver.findElement(By.cssSelector("tr:nth-child(2) > td:nth-child(1)")).getText().equals(ganho.getData().toString()))
+		if (!this.driver.findElement(By.cssSelector("tr:nth-child(2) > td:nth-child(1)")).getText()
+				.equals(ganho.getData().toString()))
 			return false;
-		if (!this.driver.findElement(By.cssSelector("tr:nth-child(2) > td:nth-child(2)")).getText().equals(ganho.getDescricao()))
+		if (!this.driver.findElement(By.cssSelector("tr:nth-child(2) > td:nth-child(2)")).getText()
+				.equals(ganho.getDescricao()))
 			return false;
-		if (!this.driver.findElement(By.cssSelector("tr:nth-child(2) > td:nth-child(3)")).getText().equals(ganho.getTipo()))
+		if (!this.driver.findElement(By.cssSelector("tr:nth-child(2) > td:nth-child(3)")).getText()
+				.equals(ganho.getTipo()))
 			return false;
-		if (!this.driver.findElement(By.cssSelector("tr:nth-child(2) > td:nth-child(4)")).getText().equals(ganho.getValor().toString()))
+		if (!this.driver.findElement(By.cssSelector("tr:nth-child(2) > td:nth-child(4)")).getText()
+				.equals(ganho.getValor().toString()))
 			return false;
 		return true;
 	}

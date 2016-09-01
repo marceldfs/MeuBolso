@@ -12,18 +12,17 @@ public class InicialPage extends Page {
 		return this.driver.findElements(By.cssSelector("li")).size();
 	}
 
-	public Boolean existeLink(String btName) {
-		if (this.driver.findElement(By.linkText(btName)) != null)
+	public Boolean existeLink(String linkText) {
+		if (this.driver.findElement(By.linkText(linkText)) != null)
 			return true;
 		return false;
-
 	}
+
 	public Boolean existeBotao(String Name) {
 		if (this.driver.findElement(By.name(Name)) != null)
 			return true;
 		return false;
 
 	}
-
 
 }

@@ -28,17 +28,17 @@ public class GastoPage extends Page {
 
 	public boolean verificarGasto(Gasto gasto) {
 
-		if (!this.driver.findElement(By.cssSelector("tr:nth-child(2) > td:nth-child(1)")).getText().equals(gasto.getData().toString()))
-
+		if (!this.driver.findElement(By.cssSelector("tr:nth-child(2) > td:nth-child(1)")).getText()
+				.equals(gasto.getData().toString()))
 			return false;
-		if (!this.driver.findElement(By.cssSelector("tr:nth-child(2) > td:nth-child(2)")).getText().equals(gasto.getDescricao()))
-
+		if (!this.driver.findElement(By.cssSelector("tr:nth-child(2) > td:nth-child(2)")).getText()
+				.equals(gasto.getDescricao()))
 			return false;
-		if (!this.driver.findElement(By.cssSelector("tr:nth-child(2) > td:nth-child(3)")).getText().equals(gasto.getTipo()))
-
+		if (!this.driver.findElement(By.cssSelector("tr:nth-child(2) > td:nth-child(3)")).getText()
+				.equals(gasto.getTipo()))
 			return false;
-		if (!this.driver.findElement(By.cssSelector("tr:nth-child(2) > td:nth-child(4)")).getText().equals(gasto.getValor().toString()))
-
+		if (!this.driver.findElement(By.cssSelector("tr:nth-child(2) > td:nth-child(4)")).getText()
+				.equals(gasto.getValor().toString()))
 			return false;
 		return true;
 	}
