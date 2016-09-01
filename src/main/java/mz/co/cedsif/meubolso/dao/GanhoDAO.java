@@ -24,4 +24,9 @@ public class GanhoDAO {
 		this.manager.getTransaction().commit();
 	}
 
+	public Ganho buscarPorId(Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

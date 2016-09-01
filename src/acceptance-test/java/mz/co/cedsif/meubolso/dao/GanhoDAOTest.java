@@ -39,4 +39,20 @@ public class GanhoDAOTest {
 		Assert.assertNotNull(ganho.getId());
 	}
 
+	@Test
+	public void deveEncontrarGanho() {
+
+		Date data = new Date();
+		String descricao = "Dipesh";
+		double valor = 3000.0;
+		Ganho ganho = new Ganho(data, descricao, TipoGanho.FIXO, valor);
+
+		GanhoDAO ganhoDAO = new GanhoDAO(this.manager);
+		ganhoDAO.inserir(ganho);
+
+		Ganho ganhoBD = ganhoDAO.buscarPorId(ganho.getId());
+
+		Assert.assertEquals(ganho.getDescrição(), ganhoBD.getDescrição());
+	}
+
 }
