@@ -46,11 +46,11 @@ public class Ganho {
 		this.data = data;
 	}
 
-	public String getDescrição() {
+	public String getDescricao() {
 		return descricao;
 	}
 
-	public void setDescrição(String descricao) {
+	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
 

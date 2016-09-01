@@ -52,7 +52,7 @@ public class GanhoDAOTest {
 
 		Ganho ganhoBD = ganhoDAO.buscarPorId(ganho.getId());
 
-		Assert.assertEquals(ganho.getDescrição(), ganhoBD.getDescrição());
+		Assert.assertEquals(ganho.getDescricao(), ganhoBD.getDescricao());
 	}
 
 	@Test
