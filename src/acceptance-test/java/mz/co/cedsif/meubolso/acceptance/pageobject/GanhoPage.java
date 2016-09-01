@@ -14,7 +14,7 @@ public class GanhoPage extends Page {
 		return this.driver.findElements(By.cssSelector("")).size();
 	}
 
-	public Boolean existeBotão(String btName) {
+	public Boolean existeBotao(String btName) {
 		if (this.driver.findElements(By.linkText(btName)) != null)
 			return true;
 		return false;
@@ -27,30 +27,26 @@ public class GanhoPage extends Page {
 	}
 
 	public void preencherGanho(Ganho ganho) {
-		this.driver.findElement(By.name(Propriedades.fieldData)).sendKeys(ganho.getData().toString());
-		this.driver.findElement(By.name(Propriedades.fieldOque)).sendKeys(ganho.getDescrição());
-		this.driver.findElement(By.name(Propriedades.fieldTipo)).sendKeys(ganho.getTipo().toString());
-		this.driver.findElement(By.name(Propriedades.fieldValor)).sendKeys(ganho.getValor().toString());
+		this.driver.findElement(By.name(Propriedades.fieldDataName)).sendKeys(ganho.getData().toString());
+		this.driver.findElement(By.name(Propriedades.fieldDescricaoName)).sendKeys(ganho.getDescricao());
+		this.driver.findElement(By.name(Propriedades.fieldTipoName)).sendKeys(ganho.getTipo().toString());
+		this.driver.findElement(By.name(Propriedades.fieldValorName)).sendKeys(ganho.getValor().toString());
 	}
 
 	public void clicarCadastrar() {
-		this.driver.findElement(By.name(Propriedades.btCadastrar)).click();
+		this.driver.findElement(By.name(Propriedades.btCadastrarName)).click();
 	}
 
 	public boolean verificarGanho(Ganho ganho) {
-		boolean resposta = false;
-		if (this.driver.findElement(By.cssSelector("tr:nth-child(1)")).getText().equals(ganho.getData().toString()))
 
-			resposta = true;
-		if (this.driver.findElement(By.cssSelector("tr:nth-child(2)")).getText().equals(ganho.getDescrição()))
-
-			resposta = true;
-		if (this.driver.findElement(By.cssSelector("tr:nth-child(3)")).getText().equals(ganho.getTipo()))
-
-			resposta = true;
-		if (this.driver.findElement(By.cssSelector("tr:nth-child(4)")).getText().equals(ganho.getValor().toString()))
-
-			resposta = true;
-		return resposta;
+		if (!this.driver.findElement(By.cssSelector("tr:nth-child(1)")).getText().equals(ganho.getData().toString()))
+			return false;
+		if (!this.driver.findElement(By.cssSelector("tr:nth-child(2)")).getText().equals(ganho.getDescricao()))
+			return false;
+		if (!this.driver.findElement(By.cssSelector("tr:nth-child(3)")).getText().equals(ganho.getTipo()))
+			return false;
+		if (!this.driver.findElement(By.cssSelector("tr:nth-child(4)")).getText().equals(ganho.getValor().toString()))
+			return false;
+		return true;
 	}
 }

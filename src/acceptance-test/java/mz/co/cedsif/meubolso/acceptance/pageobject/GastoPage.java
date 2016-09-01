@@ -14,7 +14,7 @@ public class GastoPage extends Page {
 		return this.driver.findElements(By.cssSelector("")).size();
 	}
 
-	public Boolean existeBotão(String btName) {
+	public Boolean existeBotao(String btName) {
 		if (this.driver.findElements(By.linkText(btName)) != null)
 			return true;
 		return false;
@@ -27,30 +27,30 @@ public class GastoPage extends Page {
 	}
 
 	public void preencherGasto(Gasto gasto) {
-		this.driver.findElement(By.name(Propriedades.fieldData)).sendKeys(gasto.getData().toString());
-		this.driver.findElement(By.name(Propriedades.fieldOque)).sendKeys(gasto.getDescricao());
-		this.driver.findElement(By.name(Propriedades.fieldTipo)).sendKeys(gasto.getTipo());
-		this.driver.findElement(By.name(Propriedades.fieldValor)).sendKeys(gasto.getValor().toString());
+		this.driver.findElement(By.name(Propriedades.fieldDataName)).sendKeys(gasto.getData().toString());
+		this.driver.findElement(By.name(Propriedades.fieldDescricaoName)).sendKeys(gasto.getDescricao());
+		this.driver.findElement(By.name(Propriedades.fieldTipoName)).sendKeys(gasto.getTipo());
+		this.driver.findElement(By.name(Propriedades.fieldValorName)).sendKeys(gasto.getValor().toString());
 	}
 
 	public void clicarCadastrar() {
-		this.driver.findElement(By.name(Propriedades.btCadastrar)).click();
+		this.driver.findElement(By.name(Propriedades.btCadastrarName)).click();
 	}
 
 	public boolean verificarGasto(Gasto gasto) {
-		boolean resposta = false;
-		if (this.driver.findElement(By.cssSelector("tr:nth-child(1)")).getText().equals(gasto.getData().toString()))
 
-			resposta = true;
-		if (this.driver.findElement(By.cssSelector("tr:nth-child(2)")).getText().equals(gasto.getDescricao()))
+		if (!this.driver.findElement(By.cssSelector("tr:nth-child(1)")).getText().equals(gasto.getData().toString()))
 
-			resposta = true;
-		if (this.driver.findElement(By.cssSelector("tr:nth-child(3)")).getText().equals(gasto.getTipo()))
+			return false;
+		if (!this.driver.findElement(By.cssSelector("tr:nth-child(2)")).getText().equals(gasto.getDescricao()))
 
-			resposta = true;
-		if (this.driver.findElement(By.cssSelector("tr:nth-child(4)")).getText().equals(gasto.getValor().toString()))
+			return false;
+		if (!this.driver.findElement(By.cssSelector("tr:nth-child(3)")).getText().equals(gasto.getTipo()))
 
-			resposta = true;
-		return resposta;
+			return false;
+		if (!this.driver.findElement(By.cssSelector("tr:nth-child(4)")).getText().equals(gasto.getValor().toString()))
+
+			return false;
+		return true;
 	}
 }
