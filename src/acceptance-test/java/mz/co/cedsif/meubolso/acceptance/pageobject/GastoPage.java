@@ -28,7 +28,7 @@ public class GastoPage extends Page {
 
 	public void preencherGasto(Gasto gasto) {
 		this.driver.findElement(By.name(Propriedades.fieldData)).sendKeys(gasto.getData().toString());
-		this.driver.findElement(By.name(Propriedades.fieldOque)).sendKeys(gasto.getDescrição());
+		this.driver.findElement(By.name(Propriedades.fieldOque)).sendKeys(gasto.getDescricao());
 		this.driver.findElement(By.name(Propriedades.fieldTipo)).sendKeys(gasto.getTipo());
 		this.driver.findElement(By.name(Propriedades.fieldValor)).sendKeys(gasto.getValor().toString());
 	}
@@ -42,7 +42,7 @@ public class GastoPage extends Page {
 		if (this.driver.findElement(By.cssSelector("tr:nth-child(1)")).getText().equals(gasto.getData().toString()))
 
 			resposta = true;
-		if (this.driver.findElement(By.cssSelector("tr:nth-child(2)")).getText().equals(gasto.getDescrição()))
+		if (this.driver.findElement(By.cssSelector("tr:nth-child(2)")).getText().equals(gasto.getDescricao()))
 
 			resposta = true;
 		if (this.driver.findElement(By.cssSelector("tr:nth-child(3)")).getText().equals(gasto.getTipo()))

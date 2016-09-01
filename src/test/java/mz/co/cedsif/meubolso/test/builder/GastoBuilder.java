@@ -14,7 +14,7 @@ public class GastoBuilder extends BasicoBuilder {
 	public Gasto cria() {
 		Gasto gasto = new Gasto();
 		gasto.setData(gerarDataAleatoria());
-		gasto.setDescrição(gerarTextoAleatorio(descricoesPossiveis));
+		gasto.setDescricao(gerarTextoAleatorio(descricoesPossiveis));
 		gasto.setTipo(gerarTextoAleatorio(tiposPossiveis));
 		gasto.setValor(gerarValorAleatorio(maximo));
 		return gasto;

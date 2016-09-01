@@ -29,7 +29,7 @@ public class GanhoPage extends Page {
 	public void preencherGanho(Ganho ganho) {
 		this.driver.findElement(By.name(Propriedades.fieldData)).sendKeys(ganho.getData().toString());
 		this.driver.findElement(By.name(Propriedades.fieldOque)).sendKeys(ganho.getDescrição());
-		this.driver.findElement(By.name(Propriedades.fieldTipo)).sendKeys(ganho.getTipo());
+		this.driver.findElement(By.name(Propriedades.fieldTipo)).sendKeys(ganho.getTipo().toString());
 		this.driver.findElement(By.name(Propriedades.fieldValor)).sendKeys(ganho.getValor().toString());
 	}
 

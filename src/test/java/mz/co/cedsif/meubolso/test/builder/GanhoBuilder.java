@@ -16,7 +16,7 @@ public class GanhoBuilder extends BasicoBuilder {
 		Ganho ganho = new Ganho();
 		ganho.setData(gerarDataAleatoria());
 		ganho.setDescrição(gerarTextoAleatorio(descricoesPossiveis));
-		ganho.setTipo(gerarTextoAleatorio(tiposPossiveis));
+		// ganho.setTipo(gerarTextoAleatorio(tiposPossiveis));
 		ganho.setValor(gerarValorAleatorio(maximo));
 		return ganho;
 	}
