@@ -30,12 +30,12 @@
 		</p>
 
 		<p>
-			<label>Descricao: </label> <input class="w3-input w3-border w3-round" type="text" name="">
+			<label>Descricao: </label> <input class="w3-input w3-border w3-round" type="text" name="descricao">
 		</p>
 
 		<p>
 			<label>Tipo: </label> 
-			<select class="w3-select w3-border w3-round" name="">
+			<select class="w3-select w3-border w3-round" name="tipo">
 				<option value="" disabled selected>Escolhe a opcao</option>
 				<option value="">Fixo</option>
 				<option value="">Variavel</option>
@@ -44,11 +44,11 @@
 		</p>
 
 		<p>
-			<label>Valor: </label> <input class="w3-input w3-border w3-round" type="text" name="">
+			<label>Valor: </label> <input class="w3-input w3-border w3-round" type="text" name="valor">
 		</p>
 
 		<p>
-			<input class="w3-input w3-light-grey w3-hover-grey " type="submit" value="Cadastrar">
+			<input class="w3-input w3-light-grey w3-hover-grey " type="submit" value="Cadastrar" name="cadastrar">
 		</p>
 
 	</form>
