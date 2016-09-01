@@ -23,7 +23,7 @@
 	<p></p>
 	
 	<ul class="w3-navbar w3-light-grey w3-large w3-border">
-		<li><a class="w3-green" href="index"><i class="fa fa-home fa-2x"></i></a></li>
+		<li><a class="w3-green" href=""><i class="fa fa-home fa-2x"></i></a></li>
 		<li><a href="novoganho">Novo Ganho <i class="fa fa-plus-square"></i></a></li>
 		<li><a href="novogasto">Novo Gasto <i class="fa fa-minus-square"></i></a></li>
 		<li><a href="#">Sair <i class="fa fa-sign-out"></i></a></li>

@@ -67,104 +67,56 @@
 	<classpathentry kind="lib" path="lib/acceptance-test/xalan-jar-2.7.1.jar"/>
 	<classpathentry kind="lib" path="lib/acceptance-test/xercesImpl-jar-2.11.0.jar"/>
 	<classpathentry kind="lib" path="lib/acceptance-test/xml-apis-jar-1.4.01.jar"/>
-	<classpathentry kind="lib" path="lib/default/antlr-2.7.7.jar"/>
 	<classpathentry kind="lib" path="lib/default/antlr-jar-2.7.7.jar"/>
-	<classpathentry kind="lib" path="lib/default/aopalliance-1.0.jar"/>
 	<classpathentry kind="lib" path="lib/default/aopalliance-jar-1.0.jar"/>
-	<classpathentry kind="lib" path="lib/default/cdi-api-1.1.jar"/>
 	<classpathentry kind="lib" path="lib/default/cdi-api-jar-1.1.jar"/>
-	<classpathentry kind="lib" path="lib/default/classmate-1.0.0.jar"/>
 	<classpathentry kind="lib" path="lib/default/classmate-bundle-1.0.0.jar"/>
-	<classpathentry kind="lib" path="lib/default/commons-logging-1.2.jar"/>
 	<classpathentry kind="lib" path="lib/default/commons-logging-jar-1.2.jar"/>
-	<classpathentry kind="lib" path="lib/default/dom4j-1.6.1.jar"/>
 	<classpathentry kind="lib" path="lib/default/dom4j-jar-1.6.1.jar"/>
-	<classpathentry kind="lib" path="lib/default/guava-13.0.1.jar"/>
 	<classpathentry kind="lib" path="lib/default/guava-jar-13.0.1.jar"/>
-	<classpathentry kind="lib" path="lib/default/hibernate-commons-annotations-4.0.5.Final.jar"/>
 	<classpathentry kind="lib" path="lib/default/hibernate-commons-annotations-jar-4.0.5.Final.jar"/>
-	<classpathentry kind="lib" path="lib/default/hibernate-core-4.3.7.Final.jar"/>
 	<classpathentry kind="lib" path="lib/default/hibernate-core-jar-4.3.7.Final.jar"/>
-	<classpathentry kind="lib" path="lib/default/hibernate-entitymanager-4.3.7.Final.jar"/>
 	<classpathentry kind="lib" path="lib/default/hibernate-entitymanager-jar-4.3.7.Final.jar"/>
-	<classpathentry kind="lib" path="lib/default/hibernate-jpa-2.1-api-1.0.0.Final.jar"/>
 	<classpathentry kind="lib" path="lib/default/hibernate-jpa-2.1-api-jar-1.0.0.Final.jar"/>
-	<classpathentry kind="lib" path="lib/default/hibernate-validator-5.1.3.Final.jar"/>
-	<classpathentry kind="lib" path="lib/default/hibernate-validator-cdi-5.1.3.Final.jar"/>
 	<classpathentry kind="lib" path="lib/default/hibernate-validator-cdi-jar-5.1.3.Final.jar"/>
 	<classpathentry kind="lib" path="lib/default/hibernate-validator-jar-5.1.3.Final.jar"/>
-	<classpathentry kind="lib" path="lib/default/hsqldb-2.3.1.jar"/>
 	<classpathentry kind="lib" path="lib/default/hsqldb-jar-2.3.1.jar"/>
-	<classpathentry kind="lib" path="lib/default/jandex-1.1.0.Final.jar"/>
 	<classpathentry kind="lib" path="lib/default/jandex-jar-1.1.0.Final.jar"/>
-	<classpathentry kind="lib" path="lib/default/javassist-3.18.1-GA.jar"/>
 	<classpathentry kind="lib" path="lib/default/javassist-bundle-3.18.1-GA.jar"/>
-	<classpathentry kind="lib" path="lib/default/javax.inject-1.jar"/>
 	<classpathentry kind="lib" path="lib/default/javax.inject-jar-1.jar"/>
-	<classpathentry kind="lib" path="lib/default/jboss-annotations-api_1.2_spec-1.0.0.Alpha1.jar"/>
 	<classpathentry kind="lib" path="lib/default/jboss-annotations-api_1.2_spec-jar-1.0.0.Alpha1.jar"/>
-	<classpathentry kind="lib" path="lib/default/jboss-classfilewriter-1.0.4.Final.jar"/>
 	<classpathentry kind="lib" path="lib/default/jboss-classfilewriter-jar-1.0.4.Final.jar"/>
-	<classpathentry kind="lib" path="lib/default/jboss-el-api_3.0_spec-1.0.0.Alpha1.jar"/>
 	<classpathentry kind="lib" path="lib/default/jboss-el-api_3.0_spec-jar-1.0.0.Alpha1.jar"/>
-	<classpathentry kind="lib" path="lib/default/jboss-interceptors-api_1.2_spec-1.0.0.Alpha3.jar"/>
 	<classpathentry kind="lib" path="lib/default/jboss-interceptors-api_1.2_spec-jar-1.0.0.Alpha3.jar"/>
-	<classpathentry kind="lib" path="lib/default/jboss-logging-3.1.3.GA.jar"/>
-	<classpathentry kind="lib" path="lib/default/jboss-logging-annotations-1.2.0.Beta1.jar"/>
 	<classpathentry kind="lib" path="lib/default/jboss-logging-annotations-jar-1.2.0.Beta1.jar"/>
 	<classpathentry kind="lib" path="lib/default/jboss-logging-jar-3.1.3.GA.jar"/>
-	<classpathentry kind="lib" path="lib/default/jboss-transaction-api_1.2_spec-1.0.0.Final.jar"/>
 	<classpathentry kind="lib" path="lib/default/jboss-transaction-api_1.2_spec-jar-1.0.0.Final.jar"/>
-	<classpathentry kind="lib" path="lib/default/joda-time-2.6.jar"/>
 	<classpathentry kind="lib" path="lib/default/joda-time-hibernate-jar-1.4.jar"/>
 	<classpathentry kind="lib" path="lib/default/joda-time-hibernate-javadoc-1.4.jar"/>
 	<classpathentry kind="lib" path="lib/default/joda-time-hibernate-source-1.4.jar"/>
 	<classpathentry kind="lib" path="lib/default/joda-time-jar-2.6.jar"/>
-	<classpathentry kind="lib" path="lib/default/jstl-1.2.jar"/>
 	<classpathentry kind="lib" path="lib/default/jstl-jar-1.2.jar"/>
-	<classpathentry kind="lib" path="lib/default/junit-4.8.1.jar"/>
 	<classpathentry kind="lib" path="lib/default/junit-jar-4.8.1.jar"/>
-	<classpathentry kind="lib" path="lib/default/log4j-1.2.17.jar"/>
 	<classpathentry kind="lib" path="lib/default/log4j-bundle-1.2.17.jar"/>
-	<classpathentry kind="lib" path="lib/default/logback-classic-1.1.2.jar"/>
 	<classpathentry kind="lib" path="lib/default/logback-classic-jar-1.1.2.jar"/>
-	<classpathentry kind="lib" path="lib/default/logback-core-1.1.2.jar"/>
 	<classpathentry kind="lib" path="lib/default/logback-core-jar-1.1.2.jar"/>
-	<classpathentry kind="lib" path="lib/default/sitemesh-2.4.2.jar"/>
 	<classpathentry kind="lib" path="lib/default/sitemesh-jar-2.4.2.jar"/>
-	<classpathentry kind="lib" path="lib/default/slf4j-api-1.7.9.jar"/>
 	<classpathentry kind="lib" path="lib/default/slf4j-api-jar-1.7.9.jar"/>
-	<classpathentry kind="lib" path="lib/default/slf4j-log4j12-1.7.9.jar"/>
 	<classpathentry kind="lib" path="lib/default/slf4j-log4j12-jar-1.7.9.jar"/>
-	<classpathentry kind="lib" path="lib/default/spring-aop-4.1.3.RELEASE.jar"/>
 	<classpathentry kind="lib" path="lib/default/spring-aop-jar-4.1.3.RELEASE.jar"/>
-	<classpathentry kind="lib" path="lib/default/spring-beans-4.1.3.RELEASE.jar"/>
 	<classpathentry kind="lib" path="lib/default/spring-beans-jar-4.1.3.RELEASE.jar"/>
-	<classpathentry kind="lib" path="lib/default/spring-context-4.1.3.RELEASE.jar"/>
 	<classpathentry kind="lib" path="lib/default/spring-context-jar-4.1.3.RELEASE.jar"/>
-	<classpathentry kind="lib" path="lib/default/spring-core-4.1.3.RELEASE.jar"/>
 	<classpathentry kind="lib" path="lib/default/spring-core-jar-4.1.3.RELEASE.jar"/>
-	<classpathentry kind="lib" path="lib/default/spring-expression-4.1.3.RELEASE.jar"/>
 	<classpathentry kind="lib" path="lib/default/spring-expression-jar-4.1.3.RELEASE.jar"/>
-	<classpathentry kind="lib" path="lib/default/spring-web-4.1.3.RELEASE.jar"/>
 	<classpathentry kind="lib" path="lib/default/spring-web-jar-4.1.3.RELEASE.jar"/>
-	<classpathentry kind="lib" path="lib/default/spring-webmvc-4.1.3.RELEASE.jar"/>
 	<classpathentry kind="lib" path="lib/default/spring-webmvc-jar-4.1.3.RELEASE.jar"/>
-	<classpathentry kind="lib" path="lib/default/usertype.core-3.2.0.GA.jar"/>
 	<classpathentry kind="lib" path="lib/default/usertype.core-jar-3.2.0.GA.jar"/>
-	<classpathentry kind="lib" path="lib/default/usertype.spi-3.2.0.GA.jar"/>
 	<classpathentry kind="lib" path="lib/default/usertype.spi-jar-3.2.0.GA.jar"/>
-	<classpathentry kind="lib" path="lib/default/validation-api-1.1.0.Final.jar"/>
 	<classpathentry kind="lib" path="lib/default/validation-api-jar-1.1.0.Final.jar"/>
-	<classpathentry kind="lib" path="lib/default/weld-api-2.1.Final.jar"/>
 	<classpathentry kind="lib" path="lib/default/weld-api-jar-2.1.Final.jar"/>
-	<classpathentry kind="lib" path="lib/default/weld-core-impl-2.1.2.Final.jar"/>
 	<classpathentry kind="lib" path="lib/default/weld-core-impl-jar-2.1.2.Final.jar"/>
-	<classpathentry kind="lib" path="lib/default/weld-servlet-core-2.1.2.Final.jar"/>
 	<classpathentry kind="lib" path="lib/default/weld-servlet-core-jar-2.1.2.Final.jar"/>
-	<classpathentry kind="lib" path="lib/default/weld-spi-2.1.Final.jar"/>
 	<classpathentry kind="lib" path="lib/default/weld-spi-jar-2.1.Final.jar"/>
-	<classpathentry kind="lib" path="lib/default/xml-apis-1.0.b2.jar"/>
 	<classpathentry kind="lib" path="lib/default/xml-apis-jar-1.0.b2.jar"/>
 	<classpathentry kind="output" path="src/main/webapp/WEB-INF/classes"/>
 </classpath>
