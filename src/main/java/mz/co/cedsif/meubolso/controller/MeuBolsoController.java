@@ -12,4 +12,9 @@ public class MeuBolsoController {
 		return "index";
 	}
 
+	@RequestMapping("/novogasto")
+	public String mostrarPaginaRegistarGastos() {
+		System.out.println("Executando a logica com o Spring MVC");
+		return "gastos";
+	}
 }
