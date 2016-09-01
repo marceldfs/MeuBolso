@@ -1,7 +1,13 @@
 package mz.co.cedsif.meubolso.dao;
 
-import org.joda.time.LocalDate;
+import java.util.Date;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 import mz.co.cedsif.meubolso.model.Ganho;
@@ -9,14 +15,28 @@ import mz.co.cedsif.meubolso.model.TipoGanho;
 
 public class GanhoDAOTest {
 
+	private EntityManager manager;
+	private EntityManagerFactory factory;
+
+	@Before
+	public void inicializa() {
+		this.factory = Persistence.createEntityManagerFactory("ganho");
+		this.manager = this.factory.createEntityManager();
+	}
+
 	@Test
 	public void deveInserirGanho() {
-		LocalDate data = new LocalDate();
-		data.withDayOfMonth(31).withMonthOfYear(8).withYear(2016);
+
+		Date data = new Date();
 		String descricao = "Salario";
-		double valor = 2000.0;
+		double valor = 3000.0;
+
 		Ganho ganho = new Ganho(data, descricao, TipoGanho.FIXO, valor);
-		Assert.assertTrue(new GanhoDAO().inserir(ganho));
+
+		GanhoDAO ganhoDAO = new GanhoDAO(this.manager);
+		ganhoDAO.inserir(ganho);
+
+		Assert.assertNotNull(ganho.getId());
 	}
 
 }
