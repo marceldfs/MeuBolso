@@ -12,6 +12,7 @@ import org.junit.Test;
 
 import mz.co.cedsif.meubolso.model.Ganho;
 import mz.co.cedsif.meubolso.model.TipoGanho;
+import mz.co.cedsif.meubolso.test.builder.GanhoBuilder;
 
 public class GanhoDAOTest {
 
@@ -38,7 +39,17 @@ public class GanhoDAOTest {
 
 		Assert.assertNotNull(ganho.getId());
 	}
-
+	
+	@Test
+	public void naoDeveInserirGanhoComDescricaoVazia()
+	{
+		Ganho ganhoSemValor = new GanhoBuilder().comDescriao(null).comData(new Date()).comTipo(TipoGanho.FIXO).comValor(2000).buildGanho();
+		GanhoDAO ganhoDAO = new GanhoDAO(this.manager);
+		ganhoDAO.inserir(ganhoSemValor);
+		Assert.assertNull(ganhoSemValor.getId());
+	}
+	
+	
 	@Test
 	public void deveEncontrarGanho() {
 
