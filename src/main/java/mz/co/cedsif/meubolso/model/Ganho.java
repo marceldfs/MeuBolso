@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
 @Entity
@@ -20,6 +21,7 @@ public class Ganho {
 	private Date data;
 	@NotNull
 	private String descricao;
+	@Min(1)
 	private double valor;
 
 	private TipoGanho tipo;
