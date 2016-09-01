@@ -6,7 +6,7 @@ public class Propriedades {
 	public static String linkNovoGasto = "Novo Gasto";
 	public static String linkNovoGanho = "Novo Ganho";
 	public static String btCadastrarName = "cadastrar";
-	public static String fieldDataName = "valor";
+	public static String fieldDataID = "dataGasto";
 	public static String fieldDescricaoName = "descricao";
 	public static String fieldTipoName = "tipo";
 	public static String fieldValorName = "valor";

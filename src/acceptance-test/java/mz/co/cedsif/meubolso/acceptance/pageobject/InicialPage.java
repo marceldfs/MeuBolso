@@ -9,14 +9,21 @@ public class InicialPage extends Page {
 	}
 
 	public int contaBotoes() {
-		return this.driver.findElements(By.cssSelector("")).size();
+		return this.driver.findElements(By.cssSelector("li")).size();
 	}
 
 	public Boolean existeLink(String btName) {
-		if (this.driver.findElements(By.linkText(btName)) != null)
+		if (this.driver.findElement(By.linkText(btName)) != null)
 			return true;
 		return false;
 
 	}
+	public Boolean existeBotao(String Name) {
+		if (this.driver.findElement(By.name(Name)) != null)
+			return true;
+		return false;
+
+	}
+
 
 }

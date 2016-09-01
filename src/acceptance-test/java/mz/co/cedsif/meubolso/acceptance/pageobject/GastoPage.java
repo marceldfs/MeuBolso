@@ -10,24 +10,13 @@ public class GastoPage extends Page {
 		super();
 	}
 
-	public int contaBotoes() {
-		return this.driver.findElements(By.cssSelector("")).size();
-	}
-
-	public Boolean existeBotao(String btName) {
-		if (this.driver.findElements(By.linkText(btName)) != null)
-			return true;
-		return false;
-
-	}
-
 	public void abrePaginaGasto() {
 		this.abrePaginaInicial();
 		this.driver.findElement(By.linkText(Propriedades.linkNovoGasto)).click();
 	}
 
 	public void preencherGasto(Gasto gasto) {
-		this.driver.findElement(By.name(Propriedades.fieldDataName)).sendKeys(gasto.getData().toString());
+		this.driver.findElement(By.id(Propriedades.fieldDataID)).sendKeys(gasto.getData().toString());
 		this.driver.findElement(By.name(Propriedades.fieldDescricaoName)).sendKeys(gasto.getDescricao());
 		this.driver.findElement(By.name(Propriedades.fieldTipoName)).sendKeys(gasto.getTipo());
 		this.driver.findElement(By.name(Propriedades.fieldValorName)).sendKeys(gasto.getValor().toString());

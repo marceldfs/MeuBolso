@@ -10,24 +10,13 @@ public class GanhoPage extends Page {
 		super();
 	}
 
-	public int contaBotoes() {
-		return this.driver.findElements(By.cssSelector("")).size();
-	}
-
-	public Boolean existeBotao(String btName) {
-		if (this.driver.findElements(By.linkText(btName)) != null)
-			return true;
-		return false;
-
-	}
-
 	public void abrePaginaGanho() {
 		this.abrePaginaInicial();
 		this.driver.findElement(By.linkText(Propriedades.linkNovoGasto)).click();
 	}
 
 	public void preencherGanho(Ganho ganho) {
-		this.driver.findElement(By.name(Propriedades.fieldDataName)).sendKeys(ganho.getData().toString());
+		this.driver.findElement(By.id(Propriedades.fieldDataID)).sendKeys(ganho.getData().toString());
 		this.driver.findElement(By.name(Propriedades.fieldDescricaoName)).sendKeys(ganho.getDescricao());
 		this.driver.findElement(By.name(Propriedades.fieldTipoName)).sendKeys(ganho.getTipo().toString());
 		this.driver.findElement(By.name(Propriedades.fieldValorName)).sendKeys(ganho.getValor().toString());
