@@ -17,4 +17,10 @@ public class MeuBolsoController {
 		System.out.println("Executando a logica com o Spring MVC");
 		return "gastos";
 	}
+
+	@RequestMapping("/novoganho")
+	public String mostrarPaginaRegistarGanhos() {
+		System.out.println("Executando a logica com o Spring MVC");
+		return "gastos";
+	}
 }
