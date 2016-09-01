@@ -5,6 +5,7 @@ import java.util.Date;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.validation.ConstraintViolationException;
 
 import org.junit.Assert;
 import org.junit.Before;
@@ -40,7 +41,7 @@ public class GanhoDAOTest {
 		Assert.assertNotNull(ganho.getId());
 	}
 	
-	@Test
+	@Test(expected=ConstraintViolationException.class)
 	public void naoDeveInserirGanhoComDescricaoVazia()
 	{
 		Ganho ganhoSemValor = new GanhoBuilder().comDescriao(null).comData(new Date()).comTipo(TipoGanho.FIXO).comValor(2000).buildGanho();
