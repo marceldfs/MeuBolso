@@ -2,8 +2,13 @@ package mz.co.cedsif.meubolso.model;
 
 import java.util.Date;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
 public class Ganho {
-	
+
 	@Id
 	@GeneratedValue
 	private Long id;
@@ -13,9 +18,8 @@ public class Ganho {
 
 	private String descricao;
 	private double valor;
-	
+
 	private String tipo;
-	
 
 	public Date getData() {
 		return data;
@@ -25,11 +29,11 @@ public class Ganho {
 		this.data = data;
 	}
 
-	public String getDescrição() {
+	public String getDescricao() {
 		return descricao;
 	}
 
-	public void setDescrição(String descricao) {
+	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
 
