@@ -1,5 +1,7 @@
 package mz.co.cedsif.meubolso.dao;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -33,6 +35,11 @@ public class GanhoDAO {
 		manager.close();
 
 		return ganho;
+	}
+
+	public List getLista() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

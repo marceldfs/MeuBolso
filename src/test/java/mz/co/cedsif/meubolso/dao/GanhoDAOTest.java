@@ -43,7 +43,7 @@ public class GanhoDAOTest {
 	public void deveEncontrarGanho() {
 
 		Date data = new Date();
-		String descricao = "Dipesh";
+		String descricao = "Salario";
 		double valor = 3000.0;
 		Ganho ganho = new Ganho(data, descricao, TipoGanho.FIXO, valor);
 
@@ -53,6 +53,24 @@ public class GanhoDAOTest {
 		Ganho ganhoBD = ganhoDAO.buscarPorId(ganho.getId());
 
 		Assert.assertEquals(ganho.getDescrição(), ganhoBD.getDescrição());
+	}
+
+	@Test
+	public void deveRetornarTamanhoDaLista() {
+
+		Date data = new Date();
+		String descricao = "Salario";
+		double valor = 3000.0;
+		Ganho ganho1 = new Ganho(data, descricao, TipoGanho.FIXO, valor);
+		Ganho ganho2 = new Ganho(data, descricao, TipoGanho.FIXO, valor);
+
+		GanhoDAO ganhoDAO = new GanhoDAO(this.manager);
+		ganhoDAO.inserir(ganho1);
+		ganhoDAO.inserir(ganho2);
+
+		ganhoDAO.getLista();
+
+		Assert.assertEquals(2, ganhoDAO.getLista().size());
 	}
 
 }
