@@ -57,6 +57,14 @@ public class GanhoDAOTest {
 		ganhoDAO.inserir(ganhoZero);
 	}
 	
+	@Test(expected=ConstraintViolationException.class)
+	public void naoDeveInserirGanhoComValorNegativo()
+	{
+		Ganho ganhoZero = new GanhoBuilder().comDescriao("Salario").comData(new Date()).comTipo(TipoGanho.FIXO).comValor(-1).buildGanho();
+		GanhoDAO ganhoDAO = new GanhoDAO(this.manager);
+		ganhoDAO.inserir(ganhoZero);
+	}
+	
 	
 	@Test
 	public void deveEncontrarGanho() {
