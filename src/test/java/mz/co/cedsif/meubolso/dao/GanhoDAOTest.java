@@ -44,10 +44,18 @@ public class GanhoDAOTest {
 	@Test(expected=ConstraintViolationException.class)
 	public void naoDeveInserirGanhoComDescricaoVazia()
 	{
-		Ganho ganhoSemValor = new GanhoBuilder().comDescriao(null).comData(new Date()).comTipo(TipoGanho.FIXO).comValor(2000).buildGanho();
+		Ganho ganhoSemDescricao = new GanhoBuilder().comDescriao(null).comData(new Date()).comTipo(TipoGanho.FIXO).comValor(2000).buildGanho();
 		GanhoDAO ganhoDAO = new GanhoDAO(this.manager);
-		ganhoDAO.inserir(ganhoSemValor);
-		Assert.assertNull(ganhoSemValor.getId());
+		ganhoDAO.inserir(ganhoSemDescricao);
+	}
+	
+	@Test
+	public void naoDeveInserirGanhoComValorZero()
+	{
+		Ganho ganhoZero = new GanhoBuilder().comDescriao("Salario").comData(new Date()).comTipo(TipoGanho.FIXO).comValor(0).buildGanho();
+		GanhoDAO ganhoDAO = new GanhoDAO(this.manager);
+		ganhoDAO.inserir(ganhoZero);
+		Assert.assertNull(ganhoZero.getId());
 	}
 	
 	
