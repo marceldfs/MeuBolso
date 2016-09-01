@@ -37,7 +37,7 @@ public class TesteTelaInicial {
 	}
 
 	@After
-	public static void teardown() {
+	public void teardown() {
 		navegador.fecharPagina();
 	}
 }
