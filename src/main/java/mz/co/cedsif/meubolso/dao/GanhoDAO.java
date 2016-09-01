@@ -3,6 +3,7 @@ package mz.co.cedsif.meubolso.dao;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.persistence.Query;
 
 import mz.co.cedsif.meubolso.model.Ganho;
 
@@ -25,8 +26,13 @@ public class GanhoDAO {
 	}
 
 	public Ganho buscarPorId(Long id) {
-		// TODO Auto-generated method stub
-		return null;
+		Query query = manager.createQuery("select g from Ganho as g " + "where g.id=:paramId");
+		query.setParameter("paramId", id);
+
+		Ganho ganho = (Ganho) query.getSingleResult();
+		manager.close();
+
+		return ganho;
 	}
 
 }
