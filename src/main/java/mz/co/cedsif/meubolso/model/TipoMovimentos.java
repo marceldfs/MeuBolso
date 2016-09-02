@@ -1,5 +1,5 @@
 package mz.co.cedsif.meubolso.model;
 
-public enum TipoGanho {
+public enum TipoMovimentos {
 	FIXO
 }
