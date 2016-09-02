@@ -7,9 +7,14 @@ public class CriarTabelas {
 
 	public static void main(String[] args) {
 
-		EntityManagerFactory factory = Persistence.createEntityManagerFactory("ganho");
-		factory.close();
+		EntityManagerFactory ganho = Persistence.createEntityManagerFactory("ganho");
+		EntityManagerFactory gasto = Persistence.createEntityManagerFactory("ganho");
+		
+		ganho.close();
+		gasto.close();
 
 	}
 
 }
+
+
