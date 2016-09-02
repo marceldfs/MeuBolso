@@ -99,6 +99,7 @@ public class GanhoDAOTest {
 
 	@Test
 	public void deveRetornar2ComoTamanhoDaLista() {
+
 		Date data = new Date();
 		String descricao = "Salario";
 		double valor = 3000.0;
