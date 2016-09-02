@@ -23,10 +23,10 @@
 		<hr />
 	</div>
 
-	<form class="w3-container" action="" method="post">
+	<form class="w3-container" action="adicionaGasto" method="post">
 
 		<p>
-			<label>Data: </label> <data:campoData id="dataGasto"/>
+			<label>Data: </label> <data:campoData id="data"/>
 		</p>
 
 		<p>
