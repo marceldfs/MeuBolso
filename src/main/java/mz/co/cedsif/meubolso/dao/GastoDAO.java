@@ -55,9 +55,19 @@ public class GastoDAO {
 	}
 
 
-	public List getLista() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Gasto> getLista() {
+		List<Gasto> gastos = new ArrayList<Gasto>();
+
+		Query query = manager.createQuery("select g from Gasto as g");
+		List<Gasto> gastoDB = query.getResultList();
+
+		if (gastoDB != null) {
+			for (Gasto gasto : gastoDB) {
+				gastos.add(gasto);
+			}
+		}
+		manager.close();
+		return gastos;
 	}
 
 }
