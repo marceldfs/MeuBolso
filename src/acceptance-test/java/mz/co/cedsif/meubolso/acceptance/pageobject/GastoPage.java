@@ -18,7 +18,7 @@ public class GastoPage extends Page {
 	public void preencherGasto(Gasto gasto) {
 		this.driver.findElement(By.id(Propriedades.fieldDataID)).sendKeys(gasto.getData().toString());
 		this.driver.findElement(By.name(Propriedades.fieldDescricaoName)).sendKeys(gasto.getDescricao());
-		this.driver.findElement(By.name(Propriedades.fieldTipoName)).sendKeys(gasto.getTipo());
+		this.driver.findElement(By.name(Propriedades.fieldTipoName)).sendKeys(gasto.getTipo().FIXO.toString());
 		this.driver.findElement(By.name(Propriedades.fieldValorName)).sendKeys(gasto.getValor().toString());
 	}
 

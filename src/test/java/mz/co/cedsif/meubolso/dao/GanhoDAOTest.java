@@ -99,12 +99,9 @@ public class GanhoDAOTest {
 
 	@Test
 	public void deveRetornar2ComoTamanhoDaLista() {
-
-		
 		Date data = new Date();
 		String descricao = "Salario";
 		double valor = 3000.0;
-
 		Ganho ganho1 = new Ganho(data, descricao, TipoMovimentos.FIXO, valor);
 		Ganho ganho2 = new Ganho(data, descricao, TipoMovimentos.FIXO, valor);
 
@@ -115,12 +112,9 @@ public class GanhoDAOTest {
         EntityManager managerFalso = mock(EntityManager.class);
 		when(managerFalso.createQuery("select g from Ganho as g")).thenReturn(query);
         when(query.getResultList()).thenReturn(Arrays.asList(ganho1, ganho2));
-		
 		GanhoDAO ganhoDao = new GanhoDAO(managerFalso);
-
 //        Assert.assertEquals(2, ganhoDAOFalso.getLista().size());
 		assertEquals(2, ganhoDao.getLista().size());
-		
 	}
 
 	@Test
