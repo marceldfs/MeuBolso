@@ -94,7 +94,7 @@ public class GanhoDAOTest {
 	}
 
 	@Test
-	public void deveRetornarTamanhoDaLista() {
+	public void deveRetornar2ComoTamanhoDaLista() {
 
 		Date data = new Date();
 		String descricao = "Salario";
