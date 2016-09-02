@@ -55,7 +55,6 @@ public class GanhoDAO {
 
 		if (ganhosDB != null) {
 			for (Ganho ganho : ganhosDB) {
-				System.out.println(ganho.getDescricao());
 				ganhos.add(ganho);
 			}
 		}
