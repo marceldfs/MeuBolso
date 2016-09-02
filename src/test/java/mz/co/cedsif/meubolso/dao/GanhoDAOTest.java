@@ -1,5 +1,8 @@
 package mz.co.cedsif.meubolso.dao;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -11,7 +14,6 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.validation.ConstraintViolationException;
 
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -42,7 +44,7 @@ public class GanhoDAOTest {
 		GanhoDAO ganhoDAO = new GanhoDAO(this.manager);
 		ganhoDAO.inserir(ganho);
 
-		Assert.assertNotNull(ganho.getId());
+		assertNotNull(ganho.getId());
 	}
 
 	@Test(expected = ConstraintViolationException.class)
@@ -90,7 +92,7 @@ public class GanhoDAOTest {
 
 		Ganho ganhoBD = ganhoDAO.buscarPorId(ganho.getId());
 
-		Assert.assertEquals(ganho.getDescricao(), ganhoBD.getDescricao());
+		assertEquals(ganho.getDescricao(), ganhoBD.getDescricao());
 	}
 
 	@Test
@@ -105,7 +107,16 @@ public class GanhoDAOTest {
 		GanhoDAO ganhoDAOFalso = mock(GanhoDAO.class);
 		when(ganhoDAOFalso.getLista()).thenReturn(Arrays.asList(ganho1, ganho2));
 
-		Assert.assertEquals(2, ganhoDAOFalso.getLista().size());
+		assertEquals(2, ganhoDAOFalso.getLista().size());
+	}
+
+	@Test
+	public void deveRetornarUmaListaVazia() {
+
+		GanhoDAO ganhoDAOFalso = mock(GanhoDAO.class);
+		when(ganhoDAOFalso.getLista()).thenReturn(Arrays.asList());
+
+		assertTrue(ganhoDAOFalso.getLista().isEmpty());
 	}
 
 }
