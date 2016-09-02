@@ -2,12 +2,18 @@ package mz.co.cedsif.meubolso.dao;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.persistence.Query;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -55,6 +61,23 @@ public class GastoDAOTest
 
 		assertEquals(gasto.getDescricao(), gastoBD.getDescricao());
 	}
-	
+
+	@Test
+	public void deveRetornar2ComoTamanhoDaLista() {
+
+		Date data = new Date();
+		String descricao = "Salario";
+		double valor = 3000.0;
+		Gasto gasto1 = new Gasto(data, descricao, TipoMovimentos.FIXO, valor);
+		Gasto gasto2 = new Gasto(data, descricao, TipoMovimentos.FIXO, valor);
+		
+		Query query = mock(Query.class);
+        EntityManager managerFalso = mock(EntityManager.class);
+		when(managerFalso.createQuery("select g from Gasto as g")).thenReturn(query);
+        when(query.getResultList()).thenReturn(Arrays.asList(gasto1, gasto2));
+		GastoDAO gastoDao = new GastoDAO(managerFalso);
+		assertEquals(2, gastoDao.getLista().size());
+	}
+
 	
 }
