@@ -18,7 +18,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import mz.co.cedsif.meubolso.model.Ganho;
-import mz.co.cedsif.meubolso.model.TipoGanho;
+import mz.co.cedsif.meubolso.model.TipoMovimentos;
 import mz.co.cedsif.meubolso.test.builder.GanhoBuilder;
 
 public class GanhoDAOTest {
@@ -39,7 +39,7 @@ public class GanhoDAOTest {
 		String descricao = "Salario";
 		double valor = 3000.0;
 
-		Ganho ganho = new Ganho(data, descricao, TipoGanho.FIXO, valor);
+		Ganho ganho = new Ganho(data, descricao, TipoMovimentos.FIXO, valor);
 
 		GanhoDAO ganhoDAO = new GanhoDAO(this.manager);
 		ganhoDAO.inserir(ganho);
@@ -49,7 +49,7 @@ public class GanhoDAOTest {
 
 	@Test(expected = ConstraintViolationException.class)
 	public void naoDeveInserirGanhoComDescricaoVazia() {
-		Ganho ganhoSemDescricao = new GanhoBuilder().comDescriao(null).comData(new Date()).comTipo(TipoGanho.FIXO)
+		Ganho ganhoSemDescricao = new GanhoBuilder().comDescriao(null).comData(new Date()).comTipo(TipoMovimentos.FIXO)
 				.comValor(2000).buildGanho();
 		GanhoDAO ganhoDAO = new GanhoDAO(this.manager);
 		ganhoDAO.inserir(ganhoSemDescricao);
@@ -57,7 +57,7 @@ public class GanhoDAOTest {
 
 	@Test(expected = ConstraintViolationException.class)
 	public void naoDeveInserirGanhoComValorZero() {
-		Ganho ganhoZero = new GanhoBuilder().comDescriao("Salario").comData(new Date()).comTipo(TipoGanho.FIXO)
+		Ganho ganhoZero = new GanhoBuilder().comDescriao("Salario").comData(new Date()).comTipo(TipoMovimentos.FIXO)
 				.comValor(0).buildGanho();
 		GanhoDAO ganhoDAO = new GanhoDAO(this.manager);
 		ganhoDAO.inserir(ganhoZero);
@@ -65,7 +65,7 @@ public class GanhoDAOTest {
 
 	@Test(expected = ConstraintViolationException.class)
 	public void naoDeveInserirGanhoComValorNegativo() {
-		Ganho ganhoZero = new GanhoBuilder().comDescriao("Salario").comData(new Date()).comTipo(TipoGanho.FIXO)
+		Ganho ganhoZero = new GanhoBuilder().comDescriao("Salario").comData(new Date()).comTipo(TipoMovimentos.FIXO)
 				.comValor(-1).buildGanho();
 		GanhoDAO ganhoDAO = new GanhoDAO(this.manager);
 		ganhoDAO.inserir(ganhoZero);
@@ -85,7 +85,7 @@ public class GanhoDAOTest {
 		Date data = new Date();
 		String descricao = "Salario";
 		double valor = 3000.0;
-		Ganho ganho = new Ganho(data, descricao, TipoGanho.FIXO, valor);
+		Ganho ganho = new Ganho(data, descricao, TipoMovimentos.FIXO, valor);
 
 		GanhoDAO ganhoDAO = new GanhoDAO(this.manager);
 		ganhoDAO.inserir(ganho);
@@ -102,8 +102,8 @@ public class GanhoDAOTest {
 		Date data = new Date();
 		String descricao = "Salario";
 		double valor = 3000.0;
-		Ganho ganho1 = new Ganho(data, descricao, TipoGanho.FIXO, valor);
-		Ganho ganho2 = new Ganho(data, descricao, TipoGanho.FIXO, valor);
+		Ganho ganho1 = new Ganho(data, descricao, TipoMovimentos.FIXO, valor);
+		Ganho ganho2 = new Ganho(data, descricao, TipoMovimentos.FIXO, valor);
 
 //		GanhoDAO ganhoDAOFalso = mock(GanhoDAO.class);
 //		when(ganhoDAOFalso.getLista()).thenReturn(Arrays.asList(ganho1, ganho2));

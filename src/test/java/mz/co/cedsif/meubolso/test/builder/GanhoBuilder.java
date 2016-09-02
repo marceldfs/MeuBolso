@@ -4,7 +4,7 @@ import java.util.Date;
 
 import mz.co.cedsif.meubolso.dao.GanhoDAO;
 import mz.co.cedsif.meubolso.model.Ganho;
-import mz.co.cedsif.meubolso.model.TipoGanho;
+import mz.co.cedsif.meubolso.model.TipoMovimentos;
 
 /**
  * Este builder na minha opniao deve ser alterado 
@@ -22,7 +22,7 @@ public class GanhoBuilder extends BasicoBuilder {
 	//variaveis para o novo builder
 	private double valor; 
 	private String descricao; 
-	private TipoGanho tipo;
+	private TipoMovimentos tipo;
 	private Ganho ganho;
 	private Date data;
 	
@@ -53,7 +53,7 @@ public class GanhoBuilder extends BasicoBuilder {
 		this.descricao = descricao; 
 		return this;
 	}
-	public GanhoBuilder comTipo(TipoGanho tipo)
+	public GanhoBuilder comTipo(TipoMovimentos tipo)
 	{
 		this.tipo = tipo;
 		return this;

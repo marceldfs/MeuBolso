@@ -7,6 +7,7 @@ import java.util.Date;
 import org.junit.Test;
 
 import mz.co.cedsif.meubolso.model.Gasto;
+import mz.co.cedsif.meubolso.test.builder.GastoBuilder;
 
 /**
  * Classe de teste para o GASTO DAO
@@ -19,14 +20,8 @@ public class GastoDAOTest
 	@Test
 	public void deveInserirGasto() {
 
-		Date data = new Date();
-		String descricao = "ALMOCO";
-		double valor = 500.0;
 		
-		Gasto gasto = new Gasto();
-		gasto.setData(data);
-		gasto.setDescricao(descricao);
-		gasto.setValor(valor);
+		Gasto gasto = new GastoBuilder().comData(new Date()).comDescriao("ALMOCO").comValor(500).buildGasto();
 		
 		new GastoDAO().inserir(gasto);	
 

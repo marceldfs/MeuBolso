@@ -18,7 +18,7 @@ public class Gasto {
 	@Temporal(TemporalType.DATE)
 	private Date data;
 	private String descricao;
-	private String tipo;
+	private TipoMovimentos tipo;
 	private Double valor;
 
 	public Date getData() {
@@ -37,11 +37,11 @@ public class Gasto {
 		this.descricao = descricao;
 	}
 
-	public String getTipo() {
+	public TipoMovimentos getTipo() {
 		return tipo;
 	}
 
-	public void setTipo(String tipo) {
+	public void setTipo(TipoMovimentos tipo) {
 		this.tipo = tipo;
 	}
 
@@ -54,6 +54,13 @@ public class Gasto {
 	}
 
 	public Gasto() {
+	}
+
+	public Gasto(Date data, String descricao, TipoMovimentos tipo, double valor) {
+		this.data = data;
+		this.descricao=descricao;
+		this.tipo=tipo;
+		this.valor=valor;
 	}
 
 	public Long getId() {

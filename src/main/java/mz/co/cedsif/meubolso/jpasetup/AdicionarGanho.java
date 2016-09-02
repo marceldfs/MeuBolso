@@ -7,14 +7,14 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 import mz.co.cedsif.meubolso.model.Ganho;
-import mz.co.cedsif.meubolso.model.TipoGanho;
+import mz.co.cedsif.meubolso.model.TipoMovimentos;
 
 public class AdicionarGanho {
 
 	public static void main(String[] args) {
 
 		Date data = new Date();
-		Ganho ganho = new Ganho(data, "Salario", TipoGanho.FIXO, 40.0);
+		Ganho ganho = new Ganho(data, "Salario", TipoMovimentos.FIXO, 40.0);
 
 		EntityManagerFactory factory = Persistence.createEntityManagerFactory("ganho");
 		EntityManager manager = factory.createEntityManager();

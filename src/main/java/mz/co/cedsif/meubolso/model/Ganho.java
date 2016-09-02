@@ -24,13 +24,13 @@ public class Ganho {
 	@Min(1)
 	private double valor;
 	@NotNull
-	private TipoGanho tipo;	
+	private TipoMovimentos tipo;	
 
 	public Ganho() {
 
 	}
 
-	public Ganho(Date data, String descricao, TipoGanho tipo, double valor) {
+	public Ganho(Date data, String descricao, TipoMovimentos tipo, double valor) {
 		this.data = data;
 		this.descricao = descricao;
 		this.tipo = tipo;
@@ -57,11 +57,11 @@ public class Ganho {
 		this.descricao = descricao;
 	}
 
-	public TipoGanho getTipo() {
+	public TipoMovimentos getTipo() {
 		return tipo;
 	}
 
-	public void setTipo(TipoGanho tipo) {
+	public void setTipo(TipoMovimentos tipo) {
 		this.tipo = tipo;
 	}
 
