@@ -114,7 +114,10 @@ public class GanhoDAOTest {
         when(query.getResultList()).thenReturn(Arrays.asList(ganho1, ganho2));
 		GanhoDAO ganhoDao = new GanhoDAO(managerFalso);
 //        Assert.assertEquals(2, ganhoDAOFalso.getLista().size());
-		assertEquals(2, ganhoDao.getLista().size());
+
+
+  	assertEquals(2, ganhoDao.getLista().size());
+
 	}
 
 	@Test
