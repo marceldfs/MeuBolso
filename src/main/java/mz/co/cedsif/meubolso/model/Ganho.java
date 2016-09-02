@@ -24,7 +24,7 @@ public class Ganho {
 	@Min(1)
 	private double valor;
 	@NotNull
-	private TipoGanho tipo;
+	private TipoGanho tipo;	
 
 	public Ganho() {
 
