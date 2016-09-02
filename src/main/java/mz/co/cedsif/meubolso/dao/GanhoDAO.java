@@ -46,9 +46,8 @@ public class GanhoDAO {
 
 	public List<Ganho> getLista() {
 
-		EntityManagerFactory factory = Persistence.createEntityManagerFactory("ganho");
-		this.manager = factory.createEntityManager();
 
+	
 		ArrayList<Ganho> ganhos = new ArrayList<Ganho>();
 
 		Query query = manager.createQuery("select g from Ganho as g");
