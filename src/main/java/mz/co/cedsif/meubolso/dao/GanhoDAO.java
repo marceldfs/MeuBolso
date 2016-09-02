@@ -1,5 +1,6 @@
 package mz.co.cedsif.meubolso.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -25,21 +26,42 @@ public class GanhoDAO {
 		this.manager.getTransaction().begin();
 		this.manager.persist(ganho);
 		this.manager.getTransaction().commit();
+		this.manager.close();
+
 	}
 
 	public Ganho buscarPorId(Long id) {
+
+		EntityManagerFactory factory = Persistence.createEntityManagerFactory("ganho");
+		this.manager = factory.createEntityManager();
+
 		Query query = manager.createQuery("select g from Ganho as g " + "where g.id=:paramId");
 		query.setParameter("paramId", id);
 
 		Ganho ganho = (Ganho) query.getSingleResult();
-		manager.close();
+		this.manager.close();
 
 		return ganho;
 	}
 
-	public List getLista() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Ganho> getLista() {
+
+		EntityManagerFactory factory = Persistence.createEntityManagerFactory("ganho");
+		this.manager = factory.createEntityManager();
+
+		ArrayList<Ganho> ganhos = new ArrayList<Ganho>();
+
+		Query query = manager.createQuery("select g from Ganho as g");
+		List<Ganho> ganhosDB = query.getResultList();
+
+		if (ganhosDB != null) {
+			for (Ganho ganho : ganhosDB) {
+				System.out.println(ganho.getDescricao());
+				ganhos.add(ganho);
+			}
+		}
+		manager.close();
+		return ganhos;
 	}
 
 }
