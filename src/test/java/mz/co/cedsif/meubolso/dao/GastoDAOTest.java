@@ -14,6 +14,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
+import javax.validation.ConstraintViolationException;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -21,6 +22,7 @@ import org.junit.Test;
 import mz.co.cedsif.meubolso.model.Ganho;
 import mz.co.cedsif.meubolso.model.Gasto;
 import mz.co.cedsif.meubolso.model.TipoMovimentos;
+import mz.co.cedsif.meubolso.test.builder.GanhoBuilder;
 import mz.co.cedsif.meubolso.test.builder.GastoBuilder;
 
 /**
@@ -79,5 +81,12 @@ public class GastoDAOTest
 		assertEquals(2, gastoDao.getLista().size());
 	}
 
+	@Test(expected = ConstraintViolationException.class)
+	public void naoDeveInserirGastoComDescricaoVazia() {
+		Gasto ganhoSemDescricao = new GastoBuilder().comDescriao(null).comData(new Date()).comTipo(TipoMovimentos.FIXO)
+				.comValor(2000).buildGasto();
+		GastoDAO gastoDAO = new GastoDAO(this.manager);
+		gastoDAO.inserir(ganhoSemDescricao);
+	}
 	
 }
