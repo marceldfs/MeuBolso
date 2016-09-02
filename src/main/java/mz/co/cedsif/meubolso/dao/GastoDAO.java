@@ -3,6 +3,7 @@ package mz.co.cedsif.meubolso.dao;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.persistence.Query;
 
 import mz.co.cedsif.meubolso.model.Ganho;
 import mz.co.cedsif.meubolso.model.Gasto;
@@ -12,8 +13,8 @@ public class GastoDAO {
 	private EntityManager manager;
 	
 
-	public GastoDAO(EntityManager manager2) {
-		// TODO Auto-generated constructor stub
+	public GastoDAO(EntityManager manager) {
+		this.manager =  manager;
 	}
 
 
@@ -35,9 +36,19 @@ public class GastoDAO {
 	}
 
 
-	public Ganho buscarPorId(Long id) {
-		// TODO Auto-generated method stub
-		return null;
+	public Gasto buscarPorId(Long id) {
+		
+		EntityManagerFactory factory = Persistence.createEntityManagerFactory("ganho");
+		this.manager = factory.createEntityManager();
+
+		Query query = manager.createQuery("select g from Gasto as g " + "where g.id=:paramId");
+		query.setParameter("paramId", id);
+
+		Gasto gasto = (Gasto) query.getSingleResult();
+		this.manager.close();
+
+		return gasto;
+		
 	}
 
 }

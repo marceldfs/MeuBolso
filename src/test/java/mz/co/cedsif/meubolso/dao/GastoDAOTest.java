@@ -51,9 +51,9 @@ public class GastoDAOTest
 		GastoDAO ganhoDAO = new GastoDAO(this.manager);
 		ganhoDAO.inserir(gasto);
 
-		Ganho ganhoBD = ganhoDAO.buscarPorId(gasto.getId());
+		Gasto gastoBD = ganhoDAO.buscarPorId(gasto.getId());
 
-		assertEquals(gasto.getDescricao(), ganhoBD.getDescricao());
+		assertEquals(gasto.getDescricao(), gastoBD.getDescricao());
 	}
 	
 	
