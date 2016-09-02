@@ -44,10 +44,8 @@ public class GanhoDAO {
 		return ganho;
 	}
 
+	//meotod vai retornar a lista de ganhos da base de dados
 	public List<Ganho> getLista() {
-
-		EntityManagerFactory factory = Persistence.createEntityManagerFactory("ganho");
-		this.manager = factory.createEntityManager();
 
 		ArrayList<Ganho> ganhos = new ArrayList<Ganho>();
 

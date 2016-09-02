@@ -9,6 +9,8 @@ import static org.mockito.Mockito.when;
 import java.util.Arrays;
 import java.util.Date;
 
+import javax.persistence.Query;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -98,16 +100,27 @@ public class GanhoDAOTest {
 	@Test
 	public void deveRetornar2ComoTamanhoDaLista() {
 
+		
 		Date data = new Date();
 		String descricao = "Salario";
 		double valor = 3000.0;
 		Ganho ganho1 = new Ganho(data, descricao, TipoGanho.FIXO, valor);
 		Ganho ganho2 = new Ganho(data, descricao, TipoGanho.FIXO, valor);
 
-		GanhoDAO ganhoDAOFalso = mock(GanhoDAO.class);
-		when(ganhoDAOFalso.getLista()).thenReturn(Arrays.asList(ganho1, ganho2));
 
-		assertEquals(2, ganhoDAOFalso.getLista().size());
+//		GanhoDAO ganhoDAOFalso = mock(GanhoDAO.class);
+//		when(ganhoDAOFalso.getLista()).thenReturn(Arrays.asList(ganho1, ganho2));
+		
+		Query query = mock(Query.class);
+        EntityManager managerFalso = mock(EntityManager.class);
+		when(managerFalso.createQuery("select g from Ganho as g")).thenReturn(query);
+        when(query.getResultList()).thenReturn(Arrays.asList(ganho1, ganho2));
+		
+		GanhoDAO ganhoDao = new GanhoDAO(managerFalso);
+
+//        Assert.assertEquals(2, ganhoDAOFalso.getLista().size());
+		 assertEquals(2, ganhoDao.getLista().size());
+
 	}
 
 	@Test
@@ -117,6 +130,7 @@ public class GanhoDAOTest {
 		when(ganhoDAOFalso.getLista()).thenReturn(Arrays.asList());
 
 		assertTrue(ganhoDAOFalso.getLista().isEmpty());
+
 	}
 
 }
