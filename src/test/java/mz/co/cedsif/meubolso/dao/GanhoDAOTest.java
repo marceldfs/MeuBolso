@@ -119,7 +119,14 @@ public class GanhoDAOTest {
 		GanhoDAO ganhoDao = new GanhoDAO(managerFalso);
 
 //        Assert.assertEquals(2, ganhoDAOFalso.getLista().size());
-		 assertEquals(2, ganhoDao.getLista().size());
+
+  	assertEquals(2, ganhoDao.getLista().size());
+		
+
+	//	GanhoDAO ganhoDAOFalso = mock(GanhoDAO.class);
+		//when(ganhoDAOFalso.getLista()).thenReturn(Arrays.asList(ganho1, ganho2));
+
+		//assertEquals(2, ganhoDAOFalso.getLista().size());
 
 	}
 
