@@ -1,5 +1,9 @@
 package mz.co.cedsif.meubolso.dao;
 
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
+
+import java.util.Arrays;
 import java.util.Date;
 
 import javax.persistence.EntityManager;
@@ -40,39 +44,39 @@ public class GanhoDAOTest {
 
 		Assert.assertNotNull(ganho.getId());
 	}
-	
-	@Test(expected=ConstraintViolationException.class)
-	public void naoDeveInserirGanhoComDescricaoVazia()
-	{
-		Ganho ganhoSemDescricao = new GanhoBuilder().comDescriao(null).comData(new Date()).comTipo(TipoGanho.FIXO).comValor(2000).buildGanho();
+
+	@Test(expected = ConstraintViolationException.class)
+	public void naoDeveInserirGanhoComDescricaoVazia() {
+		Ganho ganhoSemDescricao = new GanhoBuilder().comDescriao(null).comData(new Date()).comTipo(TipoGanho.FIXO)
+				.comValor(2000).buildGanho();
 		GanhoDAO ganhoDAO = new GanhoDAO(this.manager);
 		ganhoDAO.inserir(ganhoSemDescricao);
 	}
-	
-	@Test(expected=ConstraintViolationException.class)
-	public void naoDeveInserirGanhoComValorZero()
-	{
-		Ganho ganhoZero = new GanhoBuilder().comDescriao("Salario").comData(new Date()).comTipo(TipoGanho.FIXO).comValor(0).buildGanho();
+
+	@Test(expected = ConstraintViolationException.class)
+	public void naoDeveInserirGanhoComValorZero() {
+		Ganho ganhoZero = new GanhoBuilder().comDescriao("Salario").comData(new Date()).comTipo(TipoGanho.FIXO)
+				.comValor(0).buildGanho();
 		GanhoDAO ganhoDAO = new GanhoDAO(this.manager);
 		ganhoDAO.inserir(ganhoZero);
 	}
-	
-	@Test(expected=ConstraintViolationException.class)
-	public void naoDeveInserirGanhoComValorNegativo()
-	{
-		Ganho ganhoZero = new GanhoBuilder().comDescriao("Salario").comData(new Date()).comTipo(TipoGanho.FIXO).comValor(-1).buildGanho();
+
+	@Test(expected = ConstraintViolationException.class)
+	public void naoDeveInserirGanhoComValorNegativo() {
+		Ganho ganhoZero = new GanhoBuilder().comDescriao("Salario").comData(new Date()).comTipo(TipoGanho.FIXO)
+				.comValor(-1).buildGanho();
 		GanhoDAO ganhoDAO = new GanhoDAO(this.manager);
 		ganhoDAO.inserir(ganhoZero);
 	}
-	
-	@Test(expected=ConstraintViolationException.class)
-	public void naoDeveInserirGanhoComTipoVazio()
-	{
-		Ganho ganhoZero = new GanhoBuilder().comDescriao("Salario").comData(new Date()).comTipo(null).comValor(200).buildGanho();
+
+	@Test(expected = ConstraintViolationException.class)
+	public void naoDeveInserirGanhoComTipoVazio() {
+		Ganho ganhoZero = new GanhoBuilder().comDescriao("Salario").comData(new Date()).comTipo(null).comValor(200)
+				.buildGanho();
 		GanhoDAO ganhoDAO = new GanhoDAO(this.manager);
 		ganhoDAO.inserir(ganhoZero);
 	}
-	
+
 	@Test
 	public void deveEncontrarGanho() {
 
@@ -98,13 +102,10 @@ public class GanhoDAOTest {
 		Ganho ganho1 = new Ganho(data, descricao, TipoGanho.FIXO, valor);
 		Ganho ganho2 = new Ganho(data, descricao, TipoGanho.FIXO, valor);
 
-		GanhoDAO ganhoDAO = new GanhoDAO(this.manager);
-		ganhoDAO.inserir(ganho1);
-		ganhoDAO.inserir(ganho2);
+		GanhoDAO ganhoDAOFalso = mock(GanhoDAO.class);
+		when(ganhoDAOFalso.getLista()).thenReturn(Arrays.asList(ganho1, ganho2));
 
-		ganhoDAO.getLista();
-
-		Assert.assertEquals(2, ganhoDAO.getLista().size());
+		Assert.assertEquals(2, ganhoDAOFalso.getLista().size());
 	}
 
 }
