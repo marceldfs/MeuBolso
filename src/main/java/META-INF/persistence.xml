@@ -5,6 +5,7 @@
 
 	<persistence-unit name="ganho">
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+			<class>mz.co.cedsif.meubolso.model.Ganho</class>
 		<properties>
 			<property name="hibernate.archive.autodetection" value="class" />
 			<property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect" />
@@ -20,6 +21,7 @@
 
 	<persistence-unit name="gasto">
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<class>mz.co.cedsif.meubolso.model.Gasto</class>
 		<properties>
 			<property name="hibernate.archive.autodetection" value="class" />
 			<property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect" />
